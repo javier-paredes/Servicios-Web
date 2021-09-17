@@ -83,12 +83,12 @@ const buscar = async function () {
     return await productos.listar()
 }
 const actualizar = async function (nuevoProducto) {
-    console.log(JSON.stringify(prod))
-    return await productos.actualizar(nuevoProducto.id, nuevoProducto)
+    console.log(JSON.stringify(nuevoProducto))
+    return await productos.actualizar(nuevoProducto._id, nuevoProducto)
 }
 var root = {
     buscar: buscar,
-    updateProducto: actualizar,
+    actualizarProducto: actualizar,
 };
 
 routerProductos.use('/graphql', graphqlHTTP({
